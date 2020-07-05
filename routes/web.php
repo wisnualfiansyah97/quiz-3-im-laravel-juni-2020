@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
-Route::post('/items', 'ItemController@store'); // menyimpan data
-Route::get('/items', 'ItemController@index'); // menampilkan semua
-Route::get('/items/{id}', 'ItemController@show'); // menampilkan detail item dengan id 
-Route::get('/items/{id}/edit', 'ItemController@edit'); // menampilkan form untuk edit item
-Route::put('/items/{id}', 'ItemController@update'); // menyimpan perubahan dari form edit
-Route::delete('/items/{id}', 'ItemController@destroy'); // menghapus data dengan id
+Route::get('/artikel', 'ArtikelController@index');
+Route::get('/artikel/create','ArtikelController@form_create');
+Route::post('/artikel','ArtikelController@store');
+Route::get('/artikel/{article_id}','ArtikelController@show_by_id');
+Route::get('/artikel/{article_id}/edit','ArtikelController@form_edit');
+Route::put('/artikel/{article_id}','ArtikelController@update');
+Route::delete('/artikel/{article_id}','ArtikelController@destroy');
